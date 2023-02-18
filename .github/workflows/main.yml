@@ -1,11 +1,11 @@
 name: Hello github actions
 
 on: 
-    push:
-        branches: ["*"]
+  push:
+    branches: ["*"]
 
 jobs:
-    build: 
+    deploy: 
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2

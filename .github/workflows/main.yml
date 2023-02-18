@@ -11,13 +11,14 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v1
               with: 
-                  node-version: '16'
+                node-version: '16'
             - name: Build App 
-            - run: yarn
-            - run: yarn build
+              run: |
+                yarn
+                yarn build
             - name: Deploy App to githug pages
-            - uses: peaceiris/actions-gh-pages@v3
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: './build'
+            uses: peaceiris/actions-gh-pages@v3
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: './build'
 
